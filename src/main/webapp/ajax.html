@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<button>传参</button>
+<script>
+    $("button").click(function(){
+       /*   $.ajax({
+              type:"POST",
+              url:"ajax.action",
+              dataType:"JSON",
+              success:function (data) {
+                  alert(data);
+                  alert(data.interest);
+              }
+          })*/
+        $.post("ajax.action",function (user) {
+            alert(user);
+            alert(user.userName);
+        },"json");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zr.mapper.IUserMapper">
+    <select id="findUserByUserNameAndPass" resultType="user">
+        SELECT * from user_tab WHERE userName=#{userName} AND password=#{password}
+    </select>
+
+    <insert id="insertUser">
+        INSERT INTO user_tab VALUES (user_tab_Sequence.NEXTVAL,#{userName},#{password},#{interest})
+    </insert>
+
+   <!-- <insert id="insertUser">
+        <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+            SELECT USER_TAB_SEQUENCE.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO user_tab VALUES (#{id},#{userName},#{password})
+    </insert>-->
+</mapper>

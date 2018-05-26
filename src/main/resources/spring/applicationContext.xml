@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--<bean name="myCar" class="com.zr.entity.Car">
+        <property name="id" value="2"/>
+        <property name="brand" value="ford"/>
+        <property name="price" value="200000"/>
+    </bean>-->
+    <!--扫描com.zr下所有带@的文件-->
+    <context:component-scan base-package="com.zr">
+        <!--com.zr.actions下不扫描-->
+        <context:exclude-filter type="regex" expression="com.zr.actions"/>
+    </context:component-scan>
+
+    <!--配置mybatis数据源-->
+    <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
+        <property name="username" value="maven"/>
+        <property name="password" value="root"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+        <property name="driver" value="oracle.jdbc.OracleDriver"/>
+        <!--配置数据源最大连接数-->
+        <property name="poolMaximumActiveConnections" value="20"/>
+        <!--配置连接的最大等待时间，单位ms -->
+        <property name="poolTimeToWait" value="2000"/>
+    </bean>
+
+    <!--配置mybaties的SqlSessionFactory-->
+    <bean id="SqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--配置别名-->
+        <property name="typeAliasesPackage" value="com.zr.entity"/>
+        <!--读取配置路径下的所有的mapper.xml-->
+        <property name="mapperLocations" value="classpath:mybatis/*.mapper.xml"/>
+    </bean>
+    <!--扫描mapper包下的所有接口和xml文件自动对应-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="SqlSessionFactory"/>
+        <property name="basePackage" value="com.zr.mapper"/>
+    </bean>
+
+    <!--spring接管mybatis的配置事物管理,对service进行管理-->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--找到要管理的代码，相当于切面-->
+    <tx:annotation-driven transaction-manager="txManager"/>
+</beans>
