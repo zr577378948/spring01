@@ -8,19 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf33b6dc-5543-47b6-ae1c-308f8d329f64" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-2.1.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/users.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml___jb_tmp___" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zr/actions/UserAction.java" afterPath="$PROJECT_DIR$/src/main/java/com/zr/actions/UserAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zr/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/zr/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zr/mapper/IUserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zr/mapper/IUserMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zr/service/IUserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/zr/service/IUserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zr/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/zr/service/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/user.mapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/user.mapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ajax.html" afterPath="$PROJECT_DIR$/src/main/webapp/ajax.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/register.html" afterPath="$PROJECT_DIR$/src/main/webapp/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -627,12 +615,12 @@
       <workItem from="1526968400435" duration="33746000" />
       <workItem from="1527212503739" duration="15710000" />
       <workItem from="1527296096401" duration="113000" />
-      <workItem from="1527468175359" duration="19704000" />
+      <workItem from="1527468175359" duration="19962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69273000" />
+    <option name="totallyTimeSpent" value="69531000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
