@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>ajax</title>
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 <button>传参</button>
 <script>
     $("button").click(function(){
-       /*   $.ajax({
-              type:"POST",
-              url:"ajax.action",
-              dataType:"JSON",
-              success:function (data) {
-                  alert(data);
-                  alert(data.interest);
-              }
-          })*/
-        $.post("ajax.action",function (user) {
-            alert(user);
+       /* $.post("ajax.action",function (user) {
+
             alert(user.userName);
+        },"json");*/
+
+       /* $.post("ajax2.action",function (list) {
+            $.each(list,function (index,user) {
+                alert(user.userName);
+            })
+        },"json");*/
+
+        $.post("ajax3.action",function (map) {
+            $.each(map.abc,function (index,user) {
+                alert(user.userName);
+            })
         },"json");
     });
 </script>

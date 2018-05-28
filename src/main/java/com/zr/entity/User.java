@@ -9,14 +9,13 @@ public class User {
     private Integer id;
     private String userName;
     private String password;
-    private String[] interest;
+    private String interest;
 
     public String getInterest() {
-        //将数组变成字符串
-        return Arrays.toString(interest);
+        return interest;
     }
 
-    public void setInterest(String[] interest) {
+    public void setInterest(String interest) {
         this.interest = interest;
     }
 
@@ -50,7 +49,7 @@ public class User {
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
-                ", interest=" + Arrays.toString(interest) +
+                ", interest=" + interest +
                 '}';
     }
 }

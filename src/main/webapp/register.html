@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <title>注册</title>
 </head>
+<script src="js/jquery-2.1.1.min.js"></script>
 <body>
-<form action="regist.action" method="post">
+<form id="form">
     <input type="text" name="userName" placeholder="用户名">
     <input type="text" name="password" placeholder="密码">
     <input type="checkbox" value="足球" name="interest">足球
     <input type="checkbox" value="乒乓球" name="interest">乒乓球
     <input type="checkbox" value="羽毛球" name="interest">羽毛球
-
-    <input type="submit" value="注册">
+    <input type="button" value="注册" id="sub">
 </form>
+
+<script type="text/javascript">
+    $("#sub").click(function () {
+        $.ajax({
+            type: "POST",
+            url: "/regist.action",
+            data: $("#form").serialize(),
+            success: function (data) {
+                alert(data);
+                if (data == "success") {
+                    window.location.href = "login.html"
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>

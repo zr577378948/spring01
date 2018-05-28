@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("iUserService")
 @Transactional(propagation = Propagation.REQUIRED)//propagation：事务传播机制
@@ -46,6 +47,15 @@ public class UserServiceImpl implements IUserService {
             return false;
         }
 
+    }
+
+    public List<User> findAllUsers() {
+        List<User> list = iUserMapper.findAllUsers();
+        for (User User:
+             list) {
+            System.out.println(User.toString() + "============");
+        }
+        return list;
     }
 
 
